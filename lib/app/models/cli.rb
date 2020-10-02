@@ -12,7 +12,11 @@ class Cli
         def welcome
             puts "What is your name?"    
             name = gets
+            sleep(1)
+            puts ''
             print "Hello there #{name}"
+            puts ''
+            sleep(1)
             self.select
         end
 
@@ -26,18 +30,25 @@ class Cli
             end
 
             if user_select == 1
+                sleep(1)
                 self.browse_by_styes
+                sleep(1)
             elsif user_select == 2
+                sleep(1)
                 self.browse_by_price
+                sleep(1)
             elsif user_select == 3
+                sleep(1)
                 puts Brand.all.map{|n|n.brand}
                 @prompt.keypress("-- Press any key to return --")
+                sleep(1)
                 self.select
+                sleep(1)
             elsif user_select == 4
-                p "leave this!"
+                sleep(1)
                 p "goodbye! :) "
                 exit
-
+                sleep(2)
             end
         end
 
@@ -47,25 +58,31 @@ class Cli
                     menu.choice "classic", 1
                     menu.choice "minimal", 2
                     menu.choice "streetwear", 3
-                    menu.choice "abort!", 4
+                    menu.choice "go back!", 4
             end
             if user_select == 1
+                sleep(1)
                 puts Brand.all.select{|brand|brand.style == "classic"}.map{|n|n.brand}
                 @prompt.keypress("-- Press any key to return --")
-                self.select
+                self.browse_by_styes
+                sleep(1)
             elsif user_select == 2
+                sleep(1)
                 puts Brand.all.select{|brand|brand.style == "minimal"}.map{|n|n.brand}
                 @prompt.keypress("-- Press any key to return --")
-                self.select
+                self.browse_by_styes
+                sleep(1)
             elsif user_select == 3
+                sleep(1)
                 puts Brand.all.select{|brand|brand.style == "streetwear"}.map{|n|n.brand} #&& n.price
                 @prompt.keypress("-- Press any key to return --")
-                self.select
+                self.browse_by_styes
+                sleep(1)
             elsif user_select == 4
+                sleep(1)
                 p "leave this!"
-                p "goodbye! :) "
-                exit
-                
+                self.select
+                sleep(1)
             end
         end  
         
@@ -78,21 +95,28 @@ class Cli
                     menu.choice "nevermind!", 4
             end
             if user_select == 1
+                sleep(1)
                 puts Brand.all.select{|brand|brand.price_point == "$"}.map{|n|n.brand}
                 @prompt.keypress("-- Press any key to return --")
-                self.select
+                self.browse_by_price
+                sleep(1)
             elsif user_select == 2
+                sleep(1)
                 puts Brand.all.select{|brand|brand.price_point == "$$"}.map{|n|n.brand}
                 @prompt.keypress("-- Press any key to return --")
-                self.select
+                self.browse_by_price
+                sleep(1)
             elsif user_select == 3
+                sleep(1)
                 puts Brand.all.select{|brand|brand.price_point == "$$$"}.map{|n|n.brand}
                 @prompt.keypress("-- Press any key to return --")
-                self.select
+                self.browse_by_price
+                sleep(1)
             elsif user_select == 4
+                sleep(1)
                 p "leave this!"
-                p "goodbye! :) "
-                exit
+                self.select
+                sleep(1)
                 
             end
         end  
