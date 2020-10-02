@@ -10,6 +10,9 @@ class Cli
         end
         
         def welcome
+            puts "Welcome! Ready to get litty fitty?"
+            puts ''
+            sleep(1)
             puts "What is your name?"    
             name = gets
             sleep(1)
@@ -23,6 +26,7 @@ class Cli
         def select
             
             user_select = @prompt.select("What would you like to do?") do |menu|
+                    sleep(1)
                     menu.choice "Browse by style", 1
                     menu.choice "Browse by price point", 2
                     menu.choice "See all brands", 3
@@ -80,7 +84,6 @@ class Cli
                 sleep(1)
             elsif user_select == 4
                 sleep(1)
-                p "leave this!"
                 self.select
                 sleep(1)
             end
@@ -114,7 +117,6 @@ class Cli
                 sleep(1)
             elsif user_select == 4
                 sleep(1)
-                p "leave this!"
                 self.select
                 sleep(1)
                 
