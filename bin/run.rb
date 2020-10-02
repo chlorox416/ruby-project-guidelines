@@ -1,5 +1,9 @@
+require 'pry'
 require_relative '../config/environment'
 
 
 
-puts "HELLO WORLD"
+
+
+cli = Cli.new
+binding.pry
